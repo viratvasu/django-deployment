@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>this is index.html page</h1>
+    {% if insert_me %}
+    <table>
+      <thead>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+      </thead>
+    {% for i in insert_me %}
+    <tr>
+      <td>{{i.first_name}}</td>
+      <td>{{i.last_name}}</td>
+      <td>{{i.email}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>No Access Records...</p>
+  {% endif %}
+  </body>
+</html>
